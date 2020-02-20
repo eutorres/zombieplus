@@ -2,7 +2,7 @@ var loginActions = {
     with: function (email,password) {
         return this
             .navigate()
-            .waitForElementVisible('@form', 3000)
+            .waitForElementVisible('@form', 10000)
             .setValue('@emailInput', email)
             .setValue('@passwordInput', password)
             .click('@loginButton')
@@ -10,13 +10,13 @@ var loginActions = {
 
     expectAlertDanger: function (texto) {
         return this
-            .waitForElementVisible('@alertDanger', 3000)
+            .waitForElementVisible('@alertDanger', 10000)
             .assert.containsText('@alertDanger', texto)
     },
 
     expectAlertInfo: function (texto) {
         return this
-            .waitForElementVisible('@userInfo', 3000)
+            .waitForElementVisible('@userInfo', 10000)
             .assert.containsText('@userInfo', texto)
     }
 }
